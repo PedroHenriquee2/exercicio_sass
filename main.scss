@@ -1,0 +1,56 @@
+@use 'config/reset' as *;
+@use 'sessoes/produtos' as *;
+@use 'config/cores' as *;
+
+$corPrincipal: #f5f6fa;
+$corCabecalho: #182C61;
+$corTexto: #fff;
+$corBotton: #44bd32;
+$corButton: #4cd137;
+
+body {
+    background-color: $corPrincipal;
+}
+
+header {
+    background-color: $corCabecalho;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.product-button {
+    display: block;
+    background-color: $corBotton;
+    color: $corTexto;
+    text-align: center;
+    padding: 8px 0;
+    border-radius: 8px;
+    margin-top: 8px;
+    text-decoration: none;
+}
+
+.product-button:hover {
+    background-color: $corButton;
+}
+
+@media screen and (max-width: 1023px) {
+    .container {
+        max-width: 80%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 48.5%);
+        column-gap: 3%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .products {
+        display: block;
+    }
+
+    .product-item {
+        margin-bottom: 32px;
+    }
+}
